@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/home', function () {
+    return view('welcome');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,3 +24,8 @@ Route::get('main', 'MainPageController@main');
 Route::get('submit_observation', 'MainPageController@submitObservation');
 
 Route::post('main', 'MainPageController@store');
+
+Route::controllers
+(['auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController'
+	]);

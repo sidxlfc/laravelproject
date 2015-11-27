@@ -19,5 +19,7 @@ class Observation extends Model
     {
     	return $this->belongsToMany('App\Event', 'event_observation', 'obs_id', 'event_name')->withTimeStamps();
     }
+
+    //public function city
 }
 ?>

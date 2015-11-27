@@ -14,21 +14,22 @@ class CreateEventObservationTable extends Migration
     {
         Schema::create('event_observation', function (Blueprint $table) 
         {
-            $table->string('obs_id');
-            $table->string('event_name');
-            $table->timestamps();
-
-            $table->primary(['obs_id', 'event_name']);
-
+            $table->string('obs_id')->index();
             $table->foreign('obs_id')
                 ->references('obs_id')
                 ->on('observations')
                 ->onDelete('cascade');
 
+            $table->string('event_name')->index();
+            
+            //$table->primary(['obs_id', 'event_name']);
+
             $table->foreign('event_name')
                 ->references('event_name')
                 ->on('events')
                 ->onDelete('cascade');
+
+                $table->timestamps();
         });
     }
 

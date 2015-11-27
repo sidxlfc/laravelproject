@@ -27,10 +27,26 @@ class MainPageController extends Controller
     {
     	//$temp[$request['cloud_coverage'], $request['temperature']];
 		
-    	$obs = new Observation($request->all());
-    	$obs->save();
+    	$obs = new Observation(/*$request->all()*/);
+        
+        $obs->obs_id = $request->input('obs_id');
+        $obs->cloud_coverage = $request->input('cloud_coverage');
+        $obs->temperature = $request->input('temperature');
+    	$events = $request->input('events');
 
-    	//$obs_event = new 
+        save($obs);
+        $obs->events()->attach([$events[0], $obs->obs_id]);
+        
+
+        //$obs = $request->input('obs_id');
+        
+
+
+        //$city = $request->input('city');
+        
+        //dd($city);
+
+        //$obs_city = new 	
     	return redirect('main');
     }
 }
