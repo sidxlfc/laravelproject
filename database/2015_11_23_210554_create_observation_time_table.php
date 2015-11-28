@@ -14,15 +14,17 @@ class CreateObservationTimeTable extends Migration
     {
     Schema::create('observation_time', function (Blueprint $table) 
         {
-            $table->string('obs_id');
+            $table->increments('id');
             $table->timestamps();
 
             $table->primary('obs_id');
 
+            /*
             $table->foreign('obs_id')
                 ->references('obs_id')
                 ->on('observations')
                 ->onDelete('cascade');
+                */
         });
     }
 

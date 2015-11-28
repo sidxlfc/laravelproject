@@ -24,7 +24,6 @@ class ObservationRequest extends Request
     public function rules()
     {
         return [
-            'obs_id' => 'required',
             'precipitation_amount' => 'required',
             'temperature' => 'required'
         ];

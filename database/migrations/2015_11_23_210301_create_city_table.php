@@ -15,10 +15,9 @@ class CreateCityTable extends Migration
     {
         Schema::create('cities', function (Blueprint $table) 
         {
+            $table->increments('id');
             $table->string('city_name');
             $table->timestamps();
-
-            $table->primary('city_name');
         });
     }
 

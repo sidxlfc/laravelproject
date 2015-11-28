@@ -14,6 +14,6 @@ class City extends Model
 
     public function MS()
     {
-    	return $this->hasMany('App\MS', 'MS_city', 'city_name');
+    	return $this->hasMany('App\MS');
     }
 }

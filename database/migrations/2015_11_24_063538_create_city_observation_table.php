@@ -14,13 +14,14 @@ class CreateCityObservationTable extends Migration
     {
         Schema::create('city_observation', function (Blueprint $table) 
         {
-            $table->string('obs_id');
+            $table->string('observation_id');
             $table->string('city');
             $table->string('ms');
             $table->timestamps();
 
-            $table->primary(['obs_id', 'city']);
+            $table->primary(['observation_id', 'city']);
 
+            /*
             $table->foreign('obs_id')
                 ->references('obs_id')
                 ->on('observations')
@@ -35,6 +36,7 @@ class CreateCityObservationTable extends Migration
                 ->references('MS_name')
                 ->on('MS')
                 ->onDelete('cascade');
+                */
         });
     }
 

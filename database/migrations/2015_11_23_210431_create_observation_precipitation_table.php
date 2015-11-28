@@ -14,16 +14,17 @@ class CreateObservationPrecipitationTable extends Migration
     {
         Schema::create('observation_precipitation', function (Blueprint $table) 
         {
-            //$table->increments('id');
-            $table->string('obs_id');
+            $table->increments('id');
+            $table->string('observation_id');
             $table->string('p_name');
             $table->string('amount');
             $table->timestamps();
 
-            $table->primary(['obs_id', 'p_name']);
+            //$table->primary(['obs_id', 'p_name']);
 
-            $table->foreign('obs_id')
-                ->references('obs_id')
+            /*
+            $table->foreign('observation_id')
+                ->references('id')
                 ->on('observations')
                 ->onDelete('cascade');
 
@@ -31,6 +32,7 @@ class CreateObservationPrecipitationTable extends Migration
                 ->references('p_name')
                 ->on('precipitation')
                 ->onDelete('cascade');
+                */
         });
     }
 

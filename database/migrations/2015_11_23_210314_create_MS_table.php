@@ -14,17 +14,18 @@ class CreateMSTable extends Migration
     {
         Schema::create('MS', function (Blueprint $table) 
         {
+            $table->increments('id');
             $table->string('MS_name');
             $table->string('MS_type');
             $table->string('MS_city');
             $table->timestamps();
 
-            $table->primary('MS_name');
-
+            /*
             $table->foreign('MS_city')
-                ->references('city_name')
+                ->references('id')
                 ->on('cities')
                 ->onDelete('cascade');
+                */
 
         });
     }

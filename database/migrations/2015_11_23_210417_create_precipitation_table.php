@@ -14,10 +14,11 @@ class CreatePrecipitationTable extends Migration
     {
         Schema::create('precipitation', function (Blueprint $table) 
         {
+            $table->increments('id');
             $table->string('p_name');
             $table->timestamps();
 
-            $table->primary('p_name');
+            //$table->primary('p_name');
         });
     }
 

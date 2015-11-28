@@ -9,11 +9,7 @@
 
 	{!! Form::open(['url' => 'main']) !!}
 	
-	<div class="form-group">
-		{!! Form::label('obs_id', 'Observation ID:') !!}
-		{!! Form::text('obs_id', null, $attributes=['class' => 'form-control', 'id'=>'precipitation_amount_text']) !!}
-	</div>
-
+	
 	<div class="form-group">
 		{!! Form::label('City', 'City:') !!}
 		{!! Form::select('city', array('Athens' => 'Athens', 'Rome' => 'Rome', 'Paris' => 'Paris', 'Berlin' => 'Berlin'), $attributes=['id'=>'city_select']) !!}
